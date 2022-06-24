@@ -4,29 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="src/index.js"
+    <script defer src="breweries.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Breweries</title>
+
+    <script src="https://kit.fontawesome.com/310e6448db.js" crossorigin="anonymous"></script>
+
+
+    <title>Brewery Finder</title>
 </head>
 <body>
-    <h1>
-        <p style="text-align: center;">Brew Finder</p>
+    
+    <div id=“age-verification” style=“display: none;“></div>
+
+
+    <h1 style="text-align: center;">Brewery Finder
     </h1>
 
-    <h3 p style="text-align: center;">A new app that helps you find breweries near you! </h3>
+    <h3 style="text-align: center;">The best way to find breweries near you!</h3>
+
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <form class="search" action="action_page.php" brewery-search>
+        <input type="search" placeholder="Search..." name="search" >
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+
+    <div class="all-breweries" brewery-card-container>
+        <template brewery-card-template>
+            <div class="brewery"> 
+                <div class="header" brewery-header></div>
+                <div class="body" brewery-body></div>
+                <button class="btn"><i class="fa-solid fa-heart"></i></button>
+            </div>   
+        </template>
+        <template user-brewery-card-template>
+            <div class="user-brewery"> 
+                <div class="user-header" user-brewery-header></div>
+                <div class="user-body" user-brewery-body></div>
+                <button class="user-btn"><i class="fa-solid fa-heart"></i></button>
+            </div>    
+        </template>
+    </div>
     
-    <h4>
-        
-        <img src="" alt="Paris" class="center">
-        
-
-    </h4>
-
-    
-    
-   
+<h2 style="text-align: center;"> Submit your favorite Brewery! </h2>
 
 
+    <form id="userForm">
+        <div>
+            <label for="name">Name</label>
+            <input id="userFormName" type="text" name="name" placeholder="Name" required>
+        </div>
+       <div>
+        <label for="city">City</label>
+        <input id="userFormCity" type="text" name="city" placeholder="City" required>
+       </div>
+       <div>
+        <label for="state">State</label>
+        <input id="userFormState" type="text" name="state" placeholder="State" required>
+       </div>
+       <div>
+        <label for="website">Website</label>
+        <input id="userFormWebsite" type="text" name="website" placeholder="Website" required>
+       </div>
+
+        <button type="submit">submit</button>
+        <button type="reset">reset</button>
+    </form>
+
+    <div id="map">
+
+        <img src="https://articulate-heroes.s3.amazonaws.com/uploads/rte/ehwqfygd_united_50states-map.png"
+
+    </div>
+ 
 
 
 </body>
